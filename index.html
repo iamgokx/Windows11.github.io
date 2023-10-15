@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Tilt+Warp&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Open+Sans:wght@600&family=Tilt+Warp&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Windows 11</title>
+</head>
+
+<body class="unselectable">
+
+
+    <section id="lockscreencont">
+        <div id="datetimecont">
+            <div id="lockscreen">
+                <h1 id="time"></h1>
+                <h3 id="date"></h3>
+            </div>
+        </div>
+        <div id="signinscreen" tabindex="0">
+            <div class="usersignin">
+                <img src="./user.jpg" alt="" id="signinuserimg">
+                <header>Gokul Lekhwar</header>
+                <!-- <button id="signinbtn">Sign </button> -->
+                <div class="passcont" id="passcont">
+                    <input id="password" placeholder="Password" type="password">
+                    <img src="./navbar/next.png" alt="" id="submitbtn" onclick="submit()">
+                </div>
+                <p style="opacity: 0.5;">windows</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="desktop" id="desktop" onmousedown="close()">
+        <div id="fileexp">
+            <div id="draggable">
+                <div class="filehome">
+                    <div class="hometab">
+                        <img src="./fileexp/Home.jpg" alt="">
+                        <header>Home</header>
+                    </div>
+                    <img src="./fileexp/cross.png" alt="" id="cross">
+                </div>
+                <div class="fileexpactions">
+                    <div id="mini" class="mimi"><img src="./fileexp/icons8-minus-24.png" alt="" id="minimize"></div>
+                    <div id="max" class="maximize"><img src="./fileexp/icons8-square-50.png" alt="" id="maximize"></div>
+                    <div id="cl" class="cose"><img src="./fileexp/cross.png" alt="" id="close"></div>
+                </div>
+
+            </div>
+            <div id="cutcopypaste">
+                <div class="new">
+                    <div class="newicon">
+                        <img src="./fileexp/icons8-plus-50.png" alt="" height="17px">
+                        <header>New</header>
+                        <img src="./fileexp/next.png" alt="" style="transform: rotate(90deg);" height="13px">
+                    </div>
+
+                    <div class="fileactions">
+                        <div class="actions cutfile"><img src="./fileexp/icons8-cut-32.png" alt=""
+                                style="transform: rotate(-90deg);"></div>
+                        <div class="actions copyfile"><img src="./fileexp/icons8-copy-24.png" alt=""></div>
+                        <div class="actions pastefile"><img src="./fileexp/icons8-paste-32.png" alt=""></div>
+                        <div class="actions sharefile"><img src="./fileexp/icons8-share-64.png" alt=""></div>
+                        <div class="actions deletefile"><img src="./fileexp/icons8-bin-50.png" alt=""></div>
+                    </div>
+
+                    <div class="sortview">
+                        <div class="sort">
+                            <img src="./fileexp/icons8-up-and-down-24.png" alt="" height="15px">
+                            <header>Sort</header>
+                            <img src="./fileexp/next.png" alt="" height="14px">
+                        </div>
+                        <div class="view">
+                            <img src="./fileexp/icons8-list-64.png" alt="" height="20px">
+                            <header>View</header>
+                            <img src="./fileexp/next.png" alt="" height="14px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="addressbar">
+                <div class="arrowdiv">
+                    <div class="left"><img src="./fileexp/icons8-arrow-50.png" alt=""
+                            style="transform: rotate(180deg);">
+                    </div>
+                    <div class="right"><img src="./fileexp/icons8-arrow-50.png" alt=""></div>
+                    <div class="down"><img src="./fileexp/next.png" alt="" style="transform: rotate(90deg);"></div>
+                    <div class="up"><img src="./fileexp/icons8-arrow-50.png" alt="" style="transform: rotate(-90deg);">
+                    </div>
+                </div>
+
+                <div class="addressdiv">
+                    <div class="homeimgtext">
+                        <div class="homeimg"><img src="./fileexp/Home.jpg" alt=""></div>
+                        <img src="./fileexp/next.png" alt="">
+                        <header>Home</header>
+                        <img src="./fileexp/next.png" alt="">
+                    </div>
+                    <div class="arrowrefresh">
+                        <div class="arrow"><img src="./fileexp/next.png" alt="" style="transform: rotate(90deg);"
+                                height="18px"></div>
+                        <div class="refresh"><img src="./fileexp/icons8-rotate-30.png" alt="" height="20px"></div>
+                    </div>
+                </div>
+
+                <div class="addresssearchbox">
+                    <input type="text" placeholder="Search">
+                    <img src="./fileexp/icons8-search-50.png" alt="">
+                </div>
+            </div>
+
+            <div class="pincont">
+                <div id="fileexppins1">
+                    <div class="cont1">
+                        <div class="pinshome">
+                            <img src="./fileexp/Home.jpg" alt="">
+
+                            <head>Home</head>
+
+                        </div>
+                        <div class="onedrive">
+                            <img src="./fileexp/one drive.png" alt="" id="onedriveimg">
+                            <header>OneDrive</header>
+                        </div>
+                    </div>
+                    <div class="cont2">
+
+                        <div class="pindesktop">
+                            <img src="./fileexp/desktop.png" alt="">
+                            <header>Desktop</header>
+                        </div>
+
+
+                        <div class="pindownloads">
+                            <img src="./fileexp/downl.png" alt="">
+                            <header>Downloads</header>
+                        </div>
+
+                        <div class="pindocuments">
+                            <img src="./fileexp/doc.png" alt="">
+                            <header>Documents</header>
+                        </div>
+
+                        <div class="pinpictures">
+                            <img src="./fileexp/pictures.png" alt="">
+                            <header>Pictures</header>
+                        </div>
+
+                        <div class="pinmusic">
+                            <img src="./fileexp/music.png" alt="">
+                            <header>Music</header>
+                        </div>
+
+                        <div class="pinvideos">
+                            <img src="./fileexp/videos.png" alt="">
+                            <header>Videos</header>
+                        </div>
+
+                        <div class="pinfolder1">
+                            <img src="./fileexp/folder.png" alt="">
+                            <header>Web Dev</header>
+                        </div>
+
+                        <div class="pinfolder2">
+                            <img src="./fileexp/folder.png" alt="">
+                            <header>Coding</header>
+                        </div>
+
+                    </div>
+                    <div class="cont3">
+                        <div class="pinthispc">
+                            <img src="./fileexp/next.png" alt="" style="transform: rotate(90deg);" height="14px">
+                            <img src="./fileexp/thispc.png" alt="" height="20px">
+                            <header>This PC</header>
+                        </div>
+                        <div class="pinos">
+                            <img src="./fileexp/next.png" alt="" style="transform: rotate(90deg);" height="14px">
+                            <img src="./fileexp/os c.png" alt="" height="20px">
+                            <header>OS (C:)</header>
+                        </div>
+                    </div>
+                </div>
+                <div id="fileexppins2">
+                    <div class="quickaccess">
+                        <div class="quickaccessheader">
+                            <img src="./fileexp/next.png" alt="" style="transform: rotate(90deg);" height="14px">
+                            <header>Quick access</header>
+                        </div>
+
+                        <div class="qickaccesspins">
+                            <div class="pin1 pins">
+                                <img src="./fileexp/desktop.png" alt="">
+                                <header>Desktop</header>
+                            </div>
+                            <div class="pin2 pins">
+                                <img src="./fileexp/downl.png" alt="">
+                                <header>Downloads</header>
+
+                            </div>
+                            <div class="pin3 pins">
+                                <img src="./fileexp/doc.png" alt="">
+                                <header>Documents</header>
+
+                            </div>
+                            <div class="pin4 pins">
+                                <img src="./fileexp/pictures.png" alt="">
+                                <header>Pictures</header>
+
+                            </div>
+                            <div class="pin5 pins">
+                                <img src="./fileexp/music.png" alt="">
+                                <header>Music</header>
+
+                            </div>
+                            <div class="pin6 pins">
+                                <img src="./fileexp/videos.png" alt="">
+                                <header>Videos</header>
+
+                            </div>
+                            <div class="pin7 pins">
+                                <img src="./fileexp/folder.png" alt="">
+                                <header>Web Development</header>
+
+                            </div>
+                            <div class="pin8 pins">
+                                <img src="./fileexp/folder.png" alt="">
+                                <header>Coding</header>
+
+                            </div>
+                        </div>
+                        <div class="recentfiles">
+                            <div class="recentheader">
+                                <img src="./fileexp/next.png" alt="" style="transform: rotate(90deg);" height="14px">
+
+                                <head>Recents</head>
+                            </div>
+
+                            <div class="recentfiles">
+                                <div class="recent1">
+                                    <div class="r1img">
+                                        <img src="./fileexp/os c.png" alt="" height="20px">
+                                        <header>OS png</header>
+                                    </div>
+                                    <header>2023-09-01 01:00 PM</header>
+                                    <header>Documents\CODING...\windows 11</header>
+                                </div>
+                                <div class="recent1">
+                                    <div class="r1img">
+                                        <img src="./fileexp/folder.png" alt="" height="20px">
+                                        <header>Windows icons</header>
+                                    </div>
+                                    <header>2023-010-01 01:00 PM</header>
+                                    <header>Documents\CODING...\windows 11</header>
+                                </div>
+                                <div class="recent1">
+                                    <div class="r1img">
+                                        <img src="./navbar/battery.png" alt="" height="20px">
+                                        <header>Battery icon</header>
+                                    </div>
+                                    <header>2023-010-01 01:00 PM</header>
+                                    <header>Documents\CODING...\windows 11</header>
+                                </div>
+                                <div class="recent1">
+                                    <div class="r1img">
+                                        <img src="./navbar/figma.png" alt="" height="20px">
+                                        <header>Figma icon</header>
+                                    </div>
+                                    <header>2023-010-01 01:00 PM</header>
+                                    <header>Documents\CODING...\windows 11</header>
+                                </div>
+                                <div class="recent1">
+                                    <div class="r1img">
+                                        <img src="./fileexp/chrome.png" alt="" height="20px">
+                                        <header>index.html</header>
+                                    </div>
+                                    <header>2023-010-01 01:00 PM</header>
+                                    <header>Documents\CODING...\windows 11</header>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="fileexpbottombar"></div>
+
+        </div>
+
+        <div class="home" id="homemenu">
+            <input type="text" placeholder="Search for apps,settings and documents" class="search" id="homesearch">
+            <div class="allapps" id="allapps">
+                <header>Pinned</header>
+                <button id="allappsbtn">All apps</button>
+            </div>
+            <div class="homeappimgcontainers" id="homeappimgcontainers">
+
+                <div class="tile">
+                    <img src="./home/powershell.png" alt="">
+                    <p>Powershell</p>
+                </div>
+
+
+                <div class="tile">
+                    <img src="./home/office.png" alt="">
+                    <p>Office Apps</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/msstore.png" alt="">
+                    <p>Microsoft Store</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/insta.png" alt="">
+                    <p>Instagram</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/recyclebin.png" alt="">
+                    <p>Recycle Bin</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/wiseforce.png" alt="">
+                    <p>Wise Force Deleter</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/cstimer.png" alt="">
+                    <p>CsTimer</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/xampp.png" alt="">
+                    <p>XAMPP</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/folder.png" alt="">
+                    <p>Coding Web</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/folder.png" alt="">
+                    <p>Projects</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/folder.png" alt="">
+                    <p>Personal Portfolio</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/folder.png" alt="">
+                    <p>Coding School</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/obsidian.png" alt="">
+                    <p>Obsidian</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/wirelessdisplay.png" alt="">
+                    <p>Wireless Display</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/pscape.png" alt="">
+                    <p>PhotoScape X</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/telegram.png" alt="">
+                    <p>Telegram</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/scrcpy.png" alt="">
+                    <p>Scrcpy</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/spacedesk.png" alt="">
+                    <p>Spacedesk</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/ptoys.png" alt="">
+                    <p>PowerToys</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/goi.png" alt="">
+                    <p>GettingOverIt</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/folder.png" alt="">
+                    <p>Bin</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/sqlcmd.png" alt="">
+                    <p>MySql Cmd</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/davinci.png" alt="">
+                    <p>DaVinci Resolve</p>
+                </div>
+
+                <div class="tile">
+                    <img src="./home/obs.png" alt="">
+                    <p>OBS Studio</p>
+                </div>
+
+
+            </div>
+            <div class="user">
+                <div class="username">
+                    <img src="user.jpg" alt="">
+                    <p>GOKUL LEKHWAR</p>
+                </div>
+                <div class="power" id="power">
+                    <div class="powerbtn" id="powerbtn"></div>
+                    <div class="powermenu" id="powermenu">
+                        <div class="menuitem">
+                            <img src="./home/settings.png" alt="">
+                            <p>sign in options</p>
+                        </div>
+                        <div class="menuitem" id="sleepbtn">
+                            <img src="./home/sleep.png" alt="">
+                            <p>sleep</p>
+                        </div>
+                        <div class="menuitem">
+                            <img src="./home/shutdown.png" alt="">
+                            <p>shutdown</p>
+                        </div>
+                        <div class="menuitem">
+                            <img src="./home/restart.png" alt="">
+                            <p>restart</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="searchmenu">
+            <div id="searchcont">
+                <img src="./search/icons8-search-50.png" alt="">
+                <input type="text" placeholder="Type here to search">
+            </div>
+            <div class="options" id="searchmenuoptions">
+                <p> &#32; &#32;All&#32; &#32; </p>
+                <p>Apps</p>
+                <p>Documents</p>
+                <p>Web</p>
+                <p>More</p>
+            </div>
+            <div class="searchcont2" id="searchcont2">
+                <div class="recents">
+                    <header>Recent</header>
+                    <div class="recentapp">
+                        <img src="./home/obs.png" alt="" class="obs">
+                        <p>OBS Studio</p>
+                    </div>
+                    <div class="recentapp">
+                        <img src="./navbar/sql.png" alt="">
+                        <p>MySql Workbench</p>
+                    </div>
+                    <div class="recentapp">
+                        <img src="./navbar/chrome.png" alt="">
+                        <p>Chrome</p>
+                    </div>
+                    <div class="recentapp">
+                        <img src="./navbar/figma.png" alt="">
+                        <p>Figma</p>
+                    </div>
+                </div>
+                <div class="news">
+                    <div class="newscont" id="newcont">
+                        <div class="newsimgcont">
+                            <a href="https://www.savetherhino.org/rhino-info/threats/poaching-rhino-horn/"
+                                target="_blank"><button>Learn more</button></a>
+
+                        </div>
+                        <header>Rhino horn is used in Traditional Chinese Medicine, but increasingly common is its use
+                            as a
+                            status symbol to display success and wealth...</header>
+                        <div class="newsimgcont2">
+                            <a href="https://www.livescience.com/24728-spring.html" target="_blank"><button>Learn
+                                    more</button></a>
+
+                        </div>
+                        <header>Spring is the season during which the natural world revives and reinvigorates after the
+                            colder winter months. During spring, dormant plants begin to grow again, new seedlings ...
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="navbardiv" id="navdiv">
+        <div id="widgets">
+            <div class="widgeticon" onclick="zoom18()"><img id="widget" src="./navbar/widgets.png"></div>
+        </div>
+        <div class="icons">
+            <div class="img" onclick="zoom1()" alt=""> <img id="win" src="./navbar/win.png" alt=""></div>
+            <div class="img" onclick="zoom2()" alt=""><img id="src" src="./navbar/src.png" alt=""></div>
+            <div class="img" onclick="zoom3()" alt=""> <img id="exp" src="./navbar/exp.png" alt=""></div>
+            <div class="img hide" onclick="zoom4()" alt=""> <img id="wht" src="./navbar/wht.png" alt=""></div>
+            <div class="img hide" onclick="zoom5()" alt=""> <img id="vs" src="./navbar/vs.png" alt=""></div>
+            <div class="img hide" onclick="zoom6()" alt=""> <img id="ecl" src="./navbar/ecp.png" alt=""></div>
+            <div class="img hide" onclick="zoom7()" alt=""> <img id="obs" src="./navbar/obs.png" alt=""></div>
+            <div class="img hide" onclick="zoom8()" alt=""> <img id="fig" src="./navbar/figma.png" alt=""></div>
+            <div class="img hide" onclick="zoom9()" alt=""> <img id="sql" src="./navbar/sql.png" alt=""></div>
+            <div class="img hide" onclick="zoom10()" alt=""> <img id="git" src="./navbar/git.png" alt=""></div>
+            <div class="img hide" onclick="zoom11()" alt=""> <img id="bash" src="./navbar/bash.png" alt=""></div>
+            <div class="img hide" onclick="zoom12()" alt=""> <img id="photo" src="./navbar/photo.png" alt=""></div>
+            <div class="img hide" onclick="zoom13()" alt=""> <img id="ps" src="./navbar/ps.png" alt=""></div>
+            <div class="img hide" onclick="zoom14()" alt=""> <img id="spotify" src="./navbar/spotify.png" alt=""></div>
+            <div class="img hide" onclick="zoom15()" alt=""> <img id="chrome" src="./navbar/chrome.png" alt=""></div>
+            <div class="img hide" onclick="zoom16()" alt=""> <img id="brave" src="./navbar/bash.png" alt=""></div>
+            <div class="img hide" onclick="zoom17()" alt=""> <img id="ms" src="./navbar/ms.png" alt=""></div>
+        </div>
+
+        <div id="navigation">
+            <div id="navagationcont">
+                <div class="tray" id="trayimg"><img src="./navbar/next.png" alt=""></div>
+                <div class="intsoundbat" id="intsoundbat">
+                    <div id="wifi"><img src="./navbar/wifi.png" alt=""></div>
+                    <div id="sound"><img src="./navbar/sound.png" alt=""></div>
+                    <div id="battery"><img src="./navbar/battery.png" alt="">
+                    </div>
+                </div>
+                <div id="navdttime">
+                    <h3 id="navtime"></h3>
+                    <h3 id="navdate"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="traymenu">
+        <img src="./navbar/defender.png" alt="">
+    </div>
+
+    <div id="navpanel">
+        <div class="navtilescont">
+            <div class="navtiles">
+                <div class="tileimg" onclick="highlight1()" id="navpanelwifi"><img src="./navbar/wifi.png" alt=""></div>
+                <p>Wifi</p>
+            </div>
+            <div class="navtiles">
+                <div class="tileimg" onclick="highlight2()" id="navbt"><img src="./navbar/bluetooth.png" alt=""></div>
+                <p>Bluetooth</p>
+            </div>
+            <div class="navtiles">
+                <div class="tileimg" onclick="highlight3()" id="navar"><img src="./navbar/aeroplane.png" alt=""></div>
+                <p>Aeroplane Mode</p>
+            </div>
+            <div class="navtiles">
+                <div class="tileimg" onclick="highlight4()" id="navac"><img src="./navbar/acc.png" alt=""></div>
+                <p>Accesibility</p>
+            </div>
+            <div class="navtiles">
+                <div class="tileimg" onclick="highlight5()" id="navcast"><img src="./navbar/cast.png" alt=""></div>
+                <p>Cast</p>
+            </div>
+            <div class="navtiles">
+                <div class="tileimg" onclick="highlight6()" id="navhot"><img src="./navbar/hotspot.png" alt=""></div>
+                <p>Hotspot</p>
+            </div>
+
+        </div>
+        <div class="soundbrightness">
+            <div class="brightness"><img src="./navbar/brightness.png" alt=""><input type="range" value="100"></div>
+            <div class="volume"><img src="./navbar/sound.png" alt=""><input type="range" value="100"></div>
+        </div>
+
+        <div class="batterypanel">
+            <img src="./navbar/battery.png" alt="">
+            <img src="./navbar/settings.png" alt="">
+        </div>
+    </div>
+
+    <div id="datepanel">
+        <div class="datepaneldate">
+            <h3 id="datepaneldate"></h3>
+        </div>
+
+        <div class="calender">
+            <div class="header">
+                <button id="prevMonth">&lt;</button>
+                <h1 id="currentMonthYear">Month Year</h1>
+                <button id="nextMonth">&gt;</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="widgetpanel">
+        <div id="widgetuser">
+            <div class="greetings">
+                <h3 id="widgetsdate"></h3>
+                <h2>Good morning Gokul</h2>
+            </div>
+            <img src="./user.jpg" alt="">
+        </div>
+        <div id="widgetoptions">
+            <p style="text-indent: 13px;">Widgets</p>
+            <div class="widgetoptions">
+                <p>Discover</p>
+                <p>Following</p>
+                <p>Watch</p>
+                <p>Play</p>
+            </div>
+        </div>
+        <div id="widgetcontainers">
+            <div class="widgetcont1">
+                <div id="weather" class="weather"></div>
+                <div id="watchlist" class="watchlist"></div>
+                <div id="traficIncidents" class="traficIncidents"></div>
+                <div id="photos" class="photos"></div>
+            </div>
+            <div class="widgetcont2">
+                <div class="news1 widgetnews" id="news1"></div>
+                <div class="news2 widgetnews" id="news2"></div>
+                <div class="news3 widgetnews" id="news3"></div>
+                <div class="news4 widgetnews" id="news4"></div>
+                <div class="news5 widgetnews" id="news5"></div>
+                <div class="news6 widgetnews" id="news6"></div>
+                <div class="news7 widgetnews" id="news7"></div>
+                <div class="news8 widgetnews" id="news8"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="mobilediv">
+
+        <img class="welcomegif" src="./welcome.gif">
+
+        <div class="console-container"><span id="text"></span>
+            <div class="console-underscore" id="console">&#95;</div>
+        </div>
+
+    </section>
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

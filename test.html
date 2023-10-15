@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calendar.css">
+    
+    <title>Windows-Style Calendar</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.calendar {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    overflow: auto;
+    resize: both;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+td {
+    border: 1px solid #ddd;
+}
+
+#currentMonthYear {
+    font-size: 24px;
+}
+
+</style>
+</head>
+<body>
+    <div class="calendar">
+        <div class="header">
+            <button id="prevMonth">&lt;</button>
+            <h1 id="currentMonthYear">Month Year</h1>
+            <button id="nextMonth">&gt;</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="calendarBody">
+                <!-- Calendar days will be added here -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const calendarBody = document.getElementById('calendarBody');
+    const currentMonthYear = document.getElementById('currentMonthYear');
+    const prevMonthButton = document.getElementById('prevMonth');
+    const nextMonthButton = document.getElementById('nextMonth');
+    
+    let currentDate = new Date();
+    
+    function generateCalendar() {
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+        const firstDayOfMonth = new Date(year, month, 1);
+        const lastDayOfMonth = new Date(year, month + 1, 0);
+        const daysInMonth = lastDayOfMonth.getDate();
+        const firstDayOfWeek = firstDayOfMonth.getDay();
+    
+        currentMonthYear.textContent = `${monthNames[month]} ${year}`;
+    
+        let dayCounter = 1;
+        let tableHTML = '';
+    
+        for (let i = 0; i < 6; i++) {
+            let rowHTML = '<tr>';
+            for (let j = 0; j < 7; j++) {
+                if ((i === 0 && j < firstDayOfWeek) || dayCounter > daysInMonth) {
+                    rowHTML += '<td></td>';
+                } else {
+                    const isCurrentDay = dayCounter === currentDate.getDate() && month === currentDate.getMonth() && year === currentDate.getFullYear();
+                    // Add inline styles to highlight the current date
+                    rowHTML += `<td style="${isCurrentDay ? 'background-color: #0078D4; color: #fff; border-radius: 50%;' : ''}">${dayCounter}</td>`;
+                    dayCounter++;
+                }
+            }
+            rowHTML += '</tr>';
+            tableHTML += rowHTML;
+        }
+    
+        calendarBody.innerHTML = tableHTML;
+    }
+    
+    const monthNames = [
+        'January', 'February', 'March', 'April',
+        'May', 'June', 'July', 'August',
+        'September', 'October', 'November', 'December'
+    ];
+    
+    generateCalendar();
+    
+    prevMonthButton.addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        generateCalendar();
+    });
+    
+    nextMonthButton.addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        generateCalendar();
+    });
+});
+
+    </script>
+</body>
+</html>
