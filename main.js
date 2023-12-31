@@ -1,5 +1,42 @@
-// window.addEventListener('load', performFunctionBasedOnScreenSize);
-// window.addEventListener('resize', performFunctionBasedOnScreenSize);
+document.addEventListener("DOMContentLoaded", function () {
+  const desktop = document.getElementById('desktop');
+  const contextMenu = document.getElementById('contextMenu');
+
+  desktop.addEventListener('contextmenu', function (event) {
+      event.preventDefault();
+      const x = event.clientX;
+      const y = event.clientY;
+      showContextMenu(x, y);
+  });
+
+  document.addEventListener('click', function () {
+      hideContextMenu();
+  });
+});
+
+function showContextMenu(x, y) {
+  const contextMenu = document.getElementById('contextMenu');
+  contextMenu.style.left = x + 'px';
+  contextMenu.style.top = y + 'px';
+  contextMenu.classList.add('show');
+}
+
+function hideContextMenu() {
+  const contextMenu = document.getElementById('contextMenu');
+  contextMenu.classList.remove('show');
+}
+
+function handleContextMenuAction(action) {
+  // Handle the selected context menu action
+  console.log('Action selected:', action);
+  hideContextMenu();
+  // Implement the logic for each action as needed
+}
+
+
+
+
+
 
 let searchmenu = document.getElementById("searchmenu");
 
@@ -17,7 +54,8 @@ document.getElementById("sleepbtn").addEventListener("click", () => {
     document.getElementById("lockscreencont").style.backgroundRepeat =
       "no-repeat";
     document.getElementById("lockscreencont").style.backgroundSize = "cover";
-    document.getElementById("lockscreencont").style.backgroundPosition = "center";
+    document.getElementById("lockscreencont").style.backgroundPosition =
+      "center";
   } else {
     document.getElementById("lockscreencont").style.backgroundSize = "200%";
   }
@@ -100,6 +138,38 @@ document.getElementById("signinscreen").addEventListener("click", () => {
 document.getElementById("navtime").innerHTML = time;
 document.getElementById("navdate").innerHTML =
   date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
+
+//power menu*******************************************************************************************
+
+let powerstatus = 0;
+document.getElementById("power").addEventListener("click", function open() {
+  if (powerstatus == 0) {
+    powerstatus = 1;
+    document.getElementById("powermenu").style.height = "150px";
+  } else if (powerstatus == 1) {
+    document.getElementById("powermenu").style.height = "0px";
+    powerstatus = 0;
+  }
+});
+
+//desktop click closes menues*******************************************************************************************
+
+document
+  .getElementById("desktop")
+  .addEventListener("mousedown", function close() {
+    calandertoggleoff();
+    intsoundbattoggleoff();
+    navpaneltoggleoff();
+    widgettoggleoff();
+    widgetitemsanimateclose();
+    console.log(powerstatus);
+
+    homemenutoggleoff();
+    homeappimgcontainersanimationclose();
+
+    searchmenutoggleoff();
+    searchmenuanimationclose();
+  });
 
 //sign in screen *******************************************************************************************
 
@@ -214,14 +284,14 @@ function searchmenutoggle() {
   const thresholdWidth = 600;
 
   if (screenWidth >= thresholdWidth) {
-  search = 1;
-  searchmenu.style.bottom = "56px";
-  searchmenu.style.opacity = "1";
-}else{
-  search = 1;
-  searchmenu.style.bottom = "45px";
-  searchmenu.style.opacity = "1";
-}
+    search = 1;
+    searchmenu.style.bottom = "56px";
+    searchmenu.style.opacity = "1";
+  } else {
+    search = 1;
+    searchmenu.style.bottom = "45px";
+    searchmenu.style.opacity = "1";
+  }
 
   // search = 1;
   // searchmenu.style.marginTop = "315px";
@@ -237,7 +307,7 @@ function searchmenutoggleoff() {
     search = 0;
     searchmenu.style.bottom = "-1000px";
     searchmenu.style.opacity = "0";
-  }else{
+  } else {
     search = 0;
     searchmenu.style.bottom = "-800px";
     searchmenu.style.opacity = "0";
@@ -326,12 +396,10 @@ function homemenutoggleoff() {
   const thresholdWidth = 600;
 
   if (screenWidth >= thresholdWidth) {
-  
     toggleStatus = 0;
     document.getElementById("homemenu").style.bottom = "-1000px";
     document.getElementById("homemenu").style.opacity = "0";
   } else {
-   
     toggleStatus = 0;
     document.getElementById("homemenu").style.bottom = "-800px";
     document.getElementById("homemenu").style.opacity = "0";
@@ -371,34 +439,6 @@ function homeappimgcontainersanimationclose() {
 //   var tiles = document.querySelectorAll('.tile');
 
 // }
-//power menu*******************************************************************************************
-
-let powerstatus = 0;
-document.getElementById("power").addEventListener("click", function open() {
-  if (powerstatus == 0) {
-    document.getElementById("powermenu").style.height = "150px";
-    powerstatus = 1;
-  } else if (powerstatus == 1) {
-    document.getElementById("powermenu").style.height = "0px";
-    powerstatus = 0;
-  }
-});
-
-//desktop click closes menues*******************************************************************************************
-
-document
-  .getElementById("desktop")
-  .addEventListener("mousedown", function close() {
-    calandertoggleoff();
-    intsoundbattoggleoff();
-    navpaneltoggleoff();
-    widgettoggleoff();
-    widgetitemsanimateclose();
-    homemenutoggleoff();
-    homeappimgcontainersanimationclose();
-    searchmenutoggleoff();
-    searchmenuanimationclose();
-  });
 
 function zoom1() {
   document.getElementById("win").style.transform = "scale(0.7)";
@@ -960,56 +1000,56 @@ document.getElementById("cl").addEventListener("click", () => {
   expstatus = 0;
 });
 
-
-
-// function([string1, string2],target id,[color1,color2])    
-consoleText(['Hello', 'Thanks for visiting', 'Please open on PC'], 'text',['Yellow','white','yellow']);
+// function([string1, string2],target id,[color1,color2])
+consoleText(["Hello", "Thanks for visiting", "Please open on PC"], "text", [
+  "Yellow",
+  "white",
+  "yellow",
+]);
 
 function consoleText(words, id, colors) {
-  if (colors === undefined) colors = ['#fff'];
+  if (colors === undefined) colors = ["#fff"];
   var visible = true;
-  var con = document.getElementById('console');
+  var con = document.getElementById("console");
   var letterCount = 1;
   var x = 1;
   var waiting = false;
-  var target = document.getElementById(id)
-  target.setAttribute('style', 'color:' + colors[0])
-  window.setInterval(function() {
-
+  var target = document.getElementById(id);
+  target.setAttribute("style", "color:" + colors[0]);
+  window.setInterval(function () {
     if (letterCount === 0 && waiting === false) {
       waiting = true;
-      target.innerHTML = words[0].substring(0, letterCount)
-      window.setTimeout(function() {
+      target.innerHTML = words[0].substring(0, letterCount);
+      window.setTimeout(function () {
         var usedColor = colors.shift();
         colors.push(usedColor);
         var usedWord = words.shift();
         words.push(usedWord);
         x = 1;
-        target.setAttribute('style', 'color:' + colors[0])
+        target.setAttribute("style", "color:" + colors[0]);
         letterCount += x;
         waiting = false;
-      }, 1000)
+      }, 1000);
     } else if (letterCount === words[0].length + 1 && waiting === false) {
       waiting = true;
-      window.setTimeout(function() {
+      window.setTimeout(function () {
         x = -1;
         letterCount += x;
         waiting = false;
-      }, 1000)
+      }, 1000);
     } else if (waiting === false) {
-      target.innerHTML = words[0].substring(0, letterCount)
+      target.innerHTML = words[0].substring(0, letterCount);
       letterCount += x;
     }
-  }, 120)
-  window.setInterval(function() {
+  }, 120);
+  window.setInterval(function () {
     if (visible === true) {
-      con.className = 'console-underscore hidden'
+      con.className = "console-underscore hidden";
       visible = false;
-
     } else {
-      con.className = 'console-underscore'
+      con.className = "console-underscore";
 
       visible = true;
     }
-  }, 400)
+  }, 400);
 }
