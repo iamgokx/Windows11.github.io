@@ -22,6 +22,35 @@
 
 <body class="unselectable">
 
+    <div id="contextMenu">
+
+        <div class="rmenuitems" onclick="handleContextMenuAction()"><img class="rmenuimg" src="./rightclick/icons8-four-squares-50.png"
+                alt="">
+            <p>View</p>
+        </div>
+        <div class="rmenuitems" onclick="handleContextMenuAction()"><img class="rmenuimg" src="./rightclick/icons8-sort-by-50.png" alt="">
+            <p>Sort By</p>
+        </div>
+        <div class="rmenuitems" onclick="handleContextMenuAction()"><img class="rimg rmenuimg" src="./rightclick/icons8-refresh-50.png"
+                alt="">
+            <p>Refresh</p>
+        </div>
+        <div class="rmenuitems" onclick="handleContextMenuAction()"><img class="rimg rmenuimg" src="./rightclick/icons8-undo-48.png"
+                alt="">
+            <p>Undo Move</p>
+        </div>
+        <div class="rmenuitems" onclick="handleContextMenuAction()"><img class="rimg rmenuimg" src="./rightclick/icons8-add-50.png" alt="">
+            <p>New</p>
+        </div>
+        <div class="rmenuitems" onclick="handleContextMenuAction()"><img class="rimg rmenuimg" src="./rightclick/icons8-settings-50.png"
+                alt="">
+            <p>Display Settings</p>
+        </div>
+        <div class="rmenuitems" onclick="handleContextMenuAction()"><img class="rimg rmenuimg" src="./rightclick/icons8-terminal-50.png" alt="">
+            <p>Open inTerminal</p>
+        </div>
+    </div>
+
 
     <section id="lockscreencont">
         <div id="datetimecont">
@@ -303,221 +332,224 @@
 
         </div>
 
-        <div class="home" id="homemenu">
-            <input type="text" placeholder="Search for apps,settings and documents" class="search" id="homesearch">
-            <div class="allapps" id="allapps">
-                <header>Pinned</header>
-                <button id="allappsbtn">All apps</button>
-            </div>
-            <div class="homeappimgcontainers" id="homeappimgcontainers">
-
-                <div class="tile">
-                    <img src="./home/powershell.png" alt="">
-                    <p>Powershell</p>
-                </div>
 
 
-                <div class="tile">
-                    <img src="./home/office.png" alt="">
-                    <p>Office Apps</p>
-                </div>
 
-                <div class="tile">
-                    <img src="./home/msstore.png" alt="">
-                    <p>Microsoft Store</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/insta.png" alt="">
-                    <p>Instagram</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/recyclebin.png" alt="">
-                    <p>Recycle Bin</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/wiseforce.png" alt="">
-                    <p>Wise Force Deleter</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/cstimer.png" alt="">
-                    <p>CsTimer</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/xampp.png" alt="">
-                    <p>XAMPP</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/folder.png" alt="">
-                    <p>Coding Web</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/folder.png" alt="">
-                    <p>Projects</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/folder.png" alt="">
-                    <p>Personal Portfolio</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/folder.png" alt="">
-                    <p>Coding School</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/obsidian.png" alt="">
-                    <p>Obsidian</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/wirelessdisplay.png" alt="">
-                    <p>Wireless Display</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/pscape.png" alt="">
-                    <p>PhotoScape X</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/telegram.png" alt="">
-                    <p>Telegram</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/scrcpy.png" alt="">
-                    <p>Scrcpy</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/spacedesk.png" alt="">
-                    <p>Spacedesk</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/ptoys.png" alt="">
-                    <p>PowerToys</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/goi.png" alt="">
-                    <p>GettingOverIt</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/folder.png" alt="">
-                    <p>Bin</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/sqlcmd.png" alt="">
-                    <p>MySql Cmd</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/davinci.png" alt="">
-                    <p>DaVinci Resolve</p>
-                </div>
-
-                <div class="tile">
-                    <img src="./home/obs.png" alt="">
+    </section>
+    <div id="searchmenu">
+        <div id="searchcont">
+            <img src="./search/icons8-search-50.png" alt="">
+            <input type="text" placeholder="Type here to search">
+        </div>
+        <div class="options" id="searchmenuoptions">
+            <p> &#32; &#32;All&#32; &#32; </p>
+            <p>Apps</p>
+            <p>Documents</p>
+            <p>Web</p>
+            <p>More</p>
+        </div>
+        <div class="searchcont2" id="searchcont2">
+            <div class="recents">
+                <header>Recent</header>
+                <div class="recentapp">
+                    <img src="./home/obs.png" alt="" class="obs">
                     <p>OBS Studio</p>
                 </div>
-
-
-            </div>
-            <div class="user">
-                <div class="username">
-                    <img src="user.jpg" alt="">
-                    <p>GOKUL LEKHWAR</p>
+                <div class="recentapp">
+                    <img src="./navbar/sql.png" alt="">
+                    <p>MySql Workbench</p>
                 </div>
-                <div class="power" id="power">
-                    <div class="powerbtn" id="powerbtn"></div>
-                    <div class="powermenu" id="powermenu">
-                        <div class="menuitem">
-                            <img src="./home/settings.png" alt="">
-                            <p>sign in options</p>
-                        </div>
-                        <div class="menuitem" id="sleepbtn">
-                            <img src="./home/sleep.png" alt="">
-                            <p>sleep</p>
-                        </div>
-                        <div class="menuitem">
-                            <img src="./home/shutdown.png" alt="">
-                            <p>shutdown</p>
-                        </div>
-                        <div class="menuitem">
-                            <img src="./home/restart.png" alt="">
-                            <p>restart</p>
-                        </div>
+                <div class="recentapp">
+                    <img src="./navbar/chrome.png" alt="">
+                    <p>Chrome</p>
+                </div>
+                <div class="recentapp">
+                    <img src="./navbar/figma.png" alt="">
+                    <p>Figma</p>
+                </div>
+            </div>
+            <div class="news">
+                <div class="newscont" id="newcont">
+                    <div class="newsimgcont">
+                        <a href="https://www.savetherhino.org/rhino-info/threats/poaching-rhino-horn/"
+                            target="_blank"><button>Learn more</button></a>
+
+                    </div>
+                    <header>Rhino horn is used in Traditional Chinese Medicine, but increasingly common is its use
+                        as a
+                        status symbol to display success and wealth...</header>
+                    <div class="newsimgcont2">
+                        <a href="https://www.livescience.com/24728-spring.html" target="_blank"><button>Learn
+                                more</button></a>
+
+                    </div>
+                    <header>Spring is the season during which the natural world revives and reinvigorates after the
+                        colder winter months. During spring, dormant plants begin to grow again, new seedlings ...
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="home" id="homemenu">
+        <input type="text" placeholder="Search for apps,settings and documents" class="search" id="homesearch">
+        <div class="allapps" id="allapps">
+            <header>Pinned</header>
+            <button id="allappsbtn">All apps</button>
+        </div>
+        <div class="homeappimgcontainers" id="homeappimgcontainers">
+
+            <div class="tile">
+                <img src="./home/powershell.png" alt="">
+                <p>Powershell</p>
+            </div>
+
+
+            <div class="tile">
+                <img src="./home/office.png" alt="">
+                <p>Office Apps</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/msstore.png" alt="">
+                <p>Microsoft Store</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/insta.png" alt="">
+                <p>Instagram</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/recyclebin.png" alt="">
+                <p>Recycle Bin</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/wiseforce.png" alt="">
+                <p>Wise Force Deleter</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/cstimer.png" alt="">
+                <p>CsTimer</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/xampp.png" alt="">
+                <p>XAMPP</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/folder.png" alt="">
+                <p>Coding Web</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/folder.png" alt="">
+                <p>Projects</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/folder.png" alt="">
+                <p>Personal Portfolio</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/folder.png" alt="">
+                <p>Coding School</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/obsidian.png" alt="">
+                <p>Obsidian</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/wirelessdisplay.png" alt="">
+                <p>Wireless Display</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/pscape.png" alt="">
+                <p>PhotoScape X</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/telegram.png" alt="">
+                <p>Telegram</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/scrcpy.png" alt="">
+                <p>Scrcpy</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/spacedesk.png" alt="">
+                <p>Spacedesk</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/ptoys.png" alt="">
+                <p>PowerToys</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/goi.png" alt="">
+                <p>GettingOverIt</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/folder.png" alt="">
+                <p>Bin</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/sqlcmd.png" alt="">
+                <p>MySql Cmd</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/davinci.png" alt="">
+                <p>DaVinci Resolve</p>
+            </div>
+
+            <div class="tile">
+                <img src="./home/obs.png" alt="">
+                <p>OBS Studio</p>
+            </div>
+
+
+        </div>
+        <div class="user">
+            <div class="username">
+                <img src="user.jpg" alt="">
+                <p>GOKUL LEKHWAR</p>
+            </div>
+            <div class="power" id="power">
+                <div class="powerbtn" id="powerbtn"></div>
+                <div class="powermenu" id="powermenu">
+                    <div class="menuitem">
+                        <img src="./home/settings.png" alt="">
+                        <p>sign in options</p>
+                    </div>
+                    <div class="menuitem" id="sleepbtn">
+                        <img src="./home/sleep.png" alt="">
+                        <p>sleep</p>
+                    </div>
+                    <div class="menuitem">
+                        <img src="./home/shutdown.png" alt="">
+                        <p>shutdown</p>
+                    </div>
+                    <div class="menuitem">
+                        <img src="./home/restart.png" alt="">
+                        <p>restart</p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div id="searchmenu">
-            <div id="searchcont">
-                <img src="./search/icons8-search-50.png" alt="">
-                <input type="text" placeholder="Type here to search">
-            </div>
-            <div class="options" id="searchmenuoptions">
-                <p> &#32; &#32;All&#32; &#32; </p>
-                <p>Apps</p>
-                <p>Documents</p>
-                <p>Web</p>
-                <p>More</p>
-            </div>
-            <div class="searchcont2" id="searchcont2">
-                <div class="recents">
-                    <header>Recent</header>
-                    <div class="recentapp">
-                        <img src="./home/obs.png" alt="" class="obs">
-                        <p>OBS Studio</p>
-                    </div>
-                    <div class="recentapp">
-                        <img src="./navbar/sql.png" alt="">
-                        <p>MySql Workbench</p>
-                    </div>
-                    <div class="recentapp">
-                        <img src="./navbar/chrome.png" alt="">
-                        <p>Chrome</p>
-                    </div>
-                    <div class="recentapp">
-                        <img src="./navbar/figma.png" alt="">
-                        <p>Figma</p>
-                    </div>
-                </div>
-                <div class="news">
-                    <div class="newscont" id="newcont">
-                        <div class="newsimgcont">
-                            <a href="https://www.savetherhino.org/rhino-info/threats/poaching-rhino-horn/"
-                                target="_blank"><button>Learn more</button></a>
-
-                        </div>
-                        <header>Rhino horn is used in Traditional Chinese Medicine, but increasingly common is its use
-                            as a
-                            status symbol to display success and wealth...</header>
-                        <div class="newsimgcont2">
-                            <a href="https://www.livescience.com/24728-spring.html" target="_blank"><button>Learn
-                                    more</button></a>
-
-                        </div>
-                        <header>Spring is the season during which the natural world revives and reinvigorates after the
-                            colder winter months. During spring, dormant plants begin to grow again, new seedlings ...
-                        </header>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
 
     <div class="navbardiv" id="navdiv">
