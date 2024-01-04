@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const contextMenu = document.getElementById('contextMenu');
 
   desktop.addEventListener('contextmenu', function (event) {
-      event.preventDefault();
-      const x = event.clientX;
-      const y = event.clientY;
-      showContextMenu(x, y);
+    event.preventDefault();
+    const x = event.clientX;
+    const y = event.clientY;
+    showContextMenu(x, y);
   });
 
   document.addEventListener('click', function () {
-      hideContextMenu();
+    hideContextMenu();
   });
 });
 
@@ -194,65 +194,18 @@ function submit() {
 }
 
 //enter key press password*******************************************************************************************
+document.getElementById("password").addEventListener("keydown", function (event) {
+  var correctPass = "windows";
 
-document
-  .getElementById("password")
-  .addEventListener("keydown", function (event) {
-    var correctPass = "windows";
-
-    var input = document.getElementById("password");
-    var key = event.key;
-
-    var check = input.value;
-
-    var status = correctPass.localeCompare(check);
-
-    if (status == 0 && key === "Enter") {
+  // Check if the Enter key was pressed
+  if (event.key === "Enter" && correctPass === document.getElementById("password").value.toLowerCase()) {
       input.value = "";
       document.getElementById("signinscreen").style.opacity = "0";
       document.getElementById("lockscreencont").style.opacity = "0";
       document.getElementById("signinscreen").style.height = "0";
       document.getElementById("lockscreencont").style.height = "0";
-    }
-  });
-
-//escape action*******************************************************************************************
-document
-  .getElementById("password")
-  .addEventListener("keydown", function (event) {
-    var key = event.key;
-
-    var check = input.value;
-
-    var status = correctPass.localeCompare(check);
-
-    if (status == 0) {
-      input.value = "";
-      document.getElementById("signinscreen").style.opacity = "0";
-      document.getElementById("lockscreencont").style.opacity = "0";
-      document.getElementById("signinscreen").style.height = "0";
-      document.getElementById("lockscreencont").style.height = "0";
-    }
-  });
-
-//nav up
-// document
-//   .getElementById("navdiv")
-//   .addEventListener("mouseenter", function home() {
-//     document.getElementById("navdiv").style.marginTop = "-129px";
-//   });
-
-// //nav down
-// document
-//   .getElementById("navdiv")
-//   .addEventListener("mouseleave", function home() {
-//     if (toggleStatus == 0 && search == 0) {
-//       document.getElementById("navdiv").style.marginTop = "-60px";
-//       document.getElementById("navdiv").style.marginTop = "-60px";
-//     } else {
-//       return;
-//     }
-//   });
+  };
+});
 
 //search menu*******************************************************************************************
 
@@ -586,9 +539,8 @@ document.addEventListener("DOMContentLoaded", function () {
             month === currentDate.getMonth() &&
             year === currentDate.getFullYear();
           // Add inline styles to highlight the current date
-          rowHTML += `<td style="${
-            isCurrentDay ? "background-color: #0078D4; border-radius:50%;" : ""
-          }">${dayCounter}</td>`;
+          rowHTML += `<td style="${isCurrentDay ? "background-color: #0078D4; border-radius:50%;" : ""
+            }">${dayCounter}</td>`;
           dayCounter++;
         }
       }
